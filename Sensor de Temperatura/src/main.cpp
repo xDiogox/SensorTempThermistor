@@ -1,3 +1,6 @@
+//Temperature Sensor With NodeMcu , temperature value is sent by MQTT to Home Assistant Server
+
+
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
@@ -12,7 +15,9 @@ WiFiClient espClient;
 PubSubClient client(espClient);
 
 
-//Variaveis Sensor ------------------------------
+//----------------------------------------------------
+
+//Thermistor Variables
 
 const double VCC = 3.3;             // NodeMCU on board 3.3v vcc
 const double R2 = 10000;            // 10k ohm series resistor
