@@ -31,6 +31,9 @@ const double C = 0.0000000876741;
 //----------------------------------------------------
 
 
+//----------------------------------------------------
+
+//WiFi Setup Function
 
 void setup_wifi() 
 {
@@ -56,6 +59,14 @@ void setup_wifi()
   Serial.println(WiFi.localIP());
 }
 
+//----------------------------------------------------
+
+
+
+//----------------------------------------------------
+
+//MQTT Connection
+
 void reconnect() 
 {
   // Loop until we're reconnected
@@ -79,6 +90,9 @@ void reconnect()
   }
 }
 
+//----------------------------------------------------
+
+
 void setup() 
 {
     Serial.begin(115200);
@@ -86,27 +100,37 @@ void setup()
     client.setServer(mqtt_server, 1883);
 }
 
-double LerADC()
+
+//----------------------------------------------------
+
+//Read ADC Values 
+
+double ReadADC()
 {
-    double soma=0;
+    double value=0;
 
     for (int i = 0; i < 20; i++)
     {
-      soma += analogRead(A0);
+      value += analogRead(A0);
       delay(100);
     }
     
-    return (soma/20.0);
+    return (value/20.0);
 
 }
 
-double LerTemperatura()
-{
+//----------------------------------------------------
 
+
+//----------------------------------------------------
+
+//Temperature values
+double Temp()
+{
 
   double Vout, Rth, temperature, adc_value; 
 
-  adc_value = LerADC();
+  adc_value = ReadADC();
   Vout = (adc_value * VCC) / adc_resolution;
   Rth = (VCC * R2 / Vout) - R2;
 
@@ -122,6 +146,8 @@ double LerTemperatura()
   return temperature;
 }
 
+//----------------------------------------------------
+
 
 
 void loop() 
@@ -133,7 +159,7 @@ void loop()
 
     client.loop();
 
-    client.publish("****" , String(LerTemperatura(),1).c_str(),true);
+    client.publish("****" , String(Temp(),1).c_str(),true);
 
     delay(1000);
 
