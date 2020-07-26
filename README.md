@@ -1,5 +1,5 @@
 # SensorTempThermistor
 
-Sensor de Temperatura Thermistor NodeMcu MQTT
+Temperature sensor working with NodeeMcu and MQTT.
 
-Sensor de Temperatura com um Thermistor de 10k , os valores da temperatura são enviados via MQTT para o Home Assistant.
+Temperature sensor made with a 10k Thermistor , NodeMcu sends temperature values via MQTT to Home Assistant.
