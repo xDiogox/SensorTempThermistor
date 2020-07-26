@@ -41,7 +41,7 @@ void setup_wifi()
   delay(10);
 
   Serial.println();
-  Serial.print("A conectar a  ");
+  Serial.print("connecting to ");
   Serial.println(ssid);
 
   //WiFi.mode(WIFI_STA);
@@ -71,19 +71,19 @@ void reconnect()
 {
   // Loop until we're reconnected
   while (!client.connected()) 
-  { 
+  {   
     Serial.print("Attempting MQTT connection...");
     
-    if (client.connect("ESP Temp" , "Username","Password"))
+    if (client.connect("ESP Name" , "Username","Password"))
     {
-      Serial.println("Conexão Efetuada ao MQTT");
+      Serial.println("MQTT");
       // Once connected, publish an announcement...
       client.publish("sensor/ligar", "Ligado");
     } 
     else 
     {
-      Serial.println("\nFalha na comunicação");
-      Serial.println("Tentativa de conexão em 5 segundos\n");
+      Serial.println("\nConnection failed");
+      Serial.println("Attempting connection in 5 seconds\n");
       
       delay(5000);
     }
@@ -140,7 +140,7 @@ double Temp()
   temperature = temperature - 273.15;  // Temperature in degree celsius
 
 
-  Serial.print("Temperatura : ") ;
+  Serial.print("Temperature : ") ;
   Serial.println(temperature); 
 
   return temperature;
