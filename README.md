@@ -14,7 +14,7 @@ Temperature sensor made with a 10k Thermistor , NodeMcu sends temperature values
 ![GitHub Logo](https://github.com/xDiogox/SensorTempThermistor/blob/master/Images/Setup.png)
 
 <br>
- Thermistor is connected to 3.3V and a 10k resistor , NodeMcu ADC read the value and the code inside the board convert the ADC value into a temperature value.<br/>
+ Thermistor is connected to 3.3V and a 10k resistor , NodeMcu ADC read the value and the code inside the board convert the ADC value into a temperature value. <br/>
 
  NodeMcu send the temperature value via MQTT to Home Assistant.
 
