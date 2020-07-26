@@ -9,7 +9,8 @@ Temperature sensor made with a 10k Thermistor , NodeMcu sends temperature values
 
 
 ## Circuit
-
+<br>
+<br>
 
 ![GitHub Logo](https://github.com/xDiogox/SensorTempThermistor/blob/master/Images/Setup.png)
   
