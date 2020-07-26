@@ -71,7 +71,7 @@ void reconnect()
 {
   // Loop until we're reconnected
   while (!client.connected()) 
-  {
+  { 
     Serial.print("Attempting MQTT connection...");
     
     if (client.connect("ESP Temp" , "Username","Password"))
