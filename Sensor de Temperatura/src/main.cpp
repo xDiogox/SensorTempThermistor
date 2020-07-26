@@ -74,7 +74,7 @@ void reconnect()
   {
     Serial.print("Attempting MQTT connection...");
     
-    if (client.connect("ESP Temp" , "testemqtt","1234"))
+    if (client.connect("ESP Temp" , "Username","Password"))
     {
       Serial.println("Conexão Efetuada ao MQTT");
       // Once connected, publish an announcement...
