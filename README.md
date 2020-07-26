@@ -24,5 +24,15 @@ Temperature sensor made with a 10k Thermistor , NodeMcu sends temperature values
 - D0 after 25 minutes will send a LOW sinal to Reset pin , when the reset pin recieves a LOW sinal NodeMcu board will wake up and start the code.
 
 <h1>
+ 
+ 
+## Result
+
+<br>
+
+![GitHub Logo](https://github.com/xDiogox/SensorTempThermistor/blob/master/Images/Result.png)
+
+<br>
+
 
 
